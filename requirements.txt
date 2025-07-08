@@ -1,13 +1,5 @@
-# Dockerfile
+# requirements.txt
 
-FROM python:3.6  # Deprecated and vulnerable
-
-WORKDIR /app
-
-COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD ["python", "app.py"]
+Flask==1.0  # Old and has known vulnerabilities
+requests==2.19.1  # Outdated with SSL-related issues
+Django==2.2.10  # Vulnerable to XSS and SQL injection
